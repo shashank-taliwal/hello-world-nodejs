@@ -18,9 +18,9 @@ pipelines:
         execution:
           onExecute:
               - echo "onExecute Command Invoked"
-            onSuccess:
+          onSuccess:
               - echo "onSuccess Command Invoked"
-            onComplete:
+          onComplete:
               - echo "onComplete Command Invoked"
       - name: step3
         type: Bash
