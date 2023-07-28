@@ -7,8 +7,9 @@ resources:
 pipelines: 
   - name: shashank_npm_start
     steps:
+      name: step1
       type: NpmBuild
-        configuration:
+      configuration:
           repositoryName: quickstarts-npm-virtual      # required, npm repository name on artifacctory
           sourceLocation: .      # required, location of package.json file
           integrations:
