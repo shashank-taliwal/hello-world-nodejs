@@ -26,7 +26,7 @@ pipelines:
           integrations:
             - name:    shashankArtifact # required
           inputResources:
-            - name: npm_build_source        # required
+            - name: npm_repo_jfp_example      # required
 
       - name: npm_publish_step
         type: NpmPublish
