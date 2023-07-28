@@ -10,3 +10,12 @@ pipelines:
             - echo "onSuccess Command Invoked"
           onComplete:
             - echo "onComplete Command Invoked"
+      - name: step2
+        type: Bash
+        execution:
+          onExecute:
+            - echo "onExecute Command Invoked"
+          onSuccess:
+            - echo "onSuccess Command Invoked"
+          onComplete:
+            - echo "onComplete Command Invoked"
