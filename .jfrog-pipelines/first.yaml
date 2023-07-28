@@ -1,5 +1,5 @@
 pipelines:
-  - name: Shashank's pipeline
+  - name: Shashank_s_pipeline
     steps: 
       - name: step1
         type: Bash
