@@ -1,4 +1,15 @@
 resources: 
+  - name: npm_repo_jfp_example
+    type: GitRepo
+    configuration:
+      # SCM integration where the repository is located
+      gitProvider: shashankGithub
+      # Repository path, including org name/repo name
+      path: shashank-taliwal/hello-world-nodejs
+      branches:
+        # Specifies which branches will trigger dependent steps
+        include: master
+
   - name: npm_build_source
     type: BuildInfo
     configuration:
