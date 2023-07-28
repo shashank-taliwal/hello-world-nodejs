@@ -1,52 +1,52 @@
 pipelines:
   - name: shashank_s_docker_pipeline
-  steps:
-    - name: step1
-      type: Bash
-      execution:
+    steps:
+      - name: step1
+        type: Bash
+        execution:
+            onExecute:
+              - echo "onExecute Command Invoked"
+            onSuccess:
+              - echo "onSuccess Command Invoked"
+            onComplete:
+              - echo "onComplete Command Invoked"
+      - name: step2
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step1
+        execution:
           onExecute:
-            - echo "onExecute Command Invoked"
+              - echo "onExecute Command Invoked"
+            onSuccess:
+              - echo "onSuccess Command Invoked"
+            onComplete:
+              - echo "onComplete Command Invoked"
+      - name: step3
+        type: Bash
+        configuration:
+          inputSteps: 
+            - name: step1
+        execution:
+          onExecute:
+              - echo "onExecute Command Invoked"
           onSuccess:
-            - echo "onSuccess Command Invoked"
+              - echo "onSuccess Command Invoked"
           onComplete:
-            - echo "onComplete Command Invoked"
-    - name: step2
-      type: Bash
-      configuration:
-        inputSteps:
-          - name: step1
-      execution:
-        onExecute:
-            - echo "onExecute Command Invoked"
+              - echo "onComplete Command Invoked"
+      - name: step4
+        type: Bash
+        configuration:
+          inputSteps: 
+          - name: step2
+          - name: step3
+        execution:
+          onExecute:
+              - echo "onExecute Command Invoked"
           onSuccess:
-            - echo "onSuccess Command Invoked"
+              - echo "onSuccess Command Invoked"
           onComplete:
-            - echo "onComplete Command Invoked"
-    - name: step3
-      type: Bash
-      configuration:
-        inputSteps: 
-          - name: step1
-      execution:
-        onExecute:
-            - echo "onExecute Command Invoked"
-        onSuccess:
-            - echo "onSuccess Command Invoked"
-        onComplete:
-            - echo "onComplete Command Invoked"
-    - name: step4
-      type: Bash
-      configuration:
-        inputSteps: 
-        - name: step2
-        - name: step3
-      execution:
-        onExecute:
-            - echo "onExecute Command Invoked"
-        onSuccess:
-            - echo "onSuccess Command Invoked"
-        onComplete:
-            - echo "onComplete Command Invoked"
-  
+              - echo "onComplete Command Invoked"
+
 
 
