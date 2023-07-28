@@ -1,0 +1,31 @@
+resources: 
+  - name: npm_build_source
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: shashankArtifact
+
+pipelines: 
+  - name: shashank_npm_start
+    steps:
+      type: NpmBuild
+        configuration:
+          repositoryName: quickstarts-npm-virtual      # required, npm repository name on artifacctory
+          sourceLocation: .      # required, location of package.json file
+          integrations:
+            - name:    shashankArtifact # required
+          inputResources:
+            - name: npm_build_source        # required
+
+      - name: npm_publish_step
+        type: NpmPublish
+        configuration:
+          # for payloadType npm:
+          repositoryName: quickstarts-npm-virtual        # required, npm repository name on artifactory
+          autoPublishBuildInfo: true       # optional
+          integrations:
+            - name:  shashankArtifact     # required
+          inputSteps:
+            - name: npm_build_step                # required
+          outputResources:
+            - name: npm_build_source                 # optional
+
