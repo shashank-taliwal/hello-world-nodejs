@@ -26,7 +26,7 @@ pipelines:
           integrations:
             - name:  shashankArtifact     # required
           inputSteps:
-            - name: npm_build_step                # required
+            - name: step1                # required
           outputResources:
             - name: npm_build_source                 # optional
 
