@@ -6,3 +6,4 @@ http.createServer(function (req, res) {
 }).listen(1337, '127.0.0.1');
 console.log("Hello World");
 console.log("Shashank This side");
+console.log("Testing the stag environment")
